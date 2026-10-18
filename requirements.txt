@@ -1,0 +1,13 @@
+pandas
+sqlalchemy
+psycopg2-binary
+python-dotenv
+scipy
+statsmodels
+matplotlib
+seaborn
+folium
+odfpy
+streamlit
+plotly
+streamlit-folium

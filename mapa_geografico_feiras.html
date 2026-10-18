@@ -1,0 +1,2520 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_41df36cabfba81355ab781f5f17f27b0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_41df36cabfba81355ab781f5f17f27b0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_41df36cabfba81355ab781f5f17f27b0 = L.map(
+                "map_41df36cabfba81355ab781f5f17f27b0",
+                {
+                    center: [-8.05428, -34.8813],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b8b1bc032eeb06635b47b85125f7577d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (HK), Esri (India), Esri (Korea), and the GIS User Community",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b8b1bc032eeb06635b47b85125f7577d.addTo(map_41df36cabfba81355ab781f5f17f27b0);
+        
+    
+        function geo_json_f5f59ade6e92513f390427e2395b626a_styler(feature) {
+            switch(feature.properties.codarea) {
+                default:
+                    return {"color": "#00796b", "fillColor": "#e0f2f1", "fillOpacity": 0.15, "weight": 1.5};
+            }
+        }
+
+        function geo_json_f5f59ade6e92513f390427e2395b626a_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_f5f59ade6e92513f390427e2395b626a = L.geoJson(null, {
+                onEachFeature: geo_json_f5f59ade6e92513f390427e2395b626a_onEachFeature,
+            
+                style: geo_json_f5f59ade6e92513f390427e2395b626a_styler,
+            ...{
+}
+        });
+
+        function geo_json_f5f59ade6e92513f390427e2395b626a_add (data) {
+            geo_json_f5f59ade6e92513f390427e2395b626a
+                .addData(data);
+        }
+            geo_json_f5f59ade6e92513f390427e2395b626a_add({"features": [{"geometry": {"coordinates": [[[-35.031, -7.9298], [-35.0183, -7.9158], [-34.9619, -7.9156], [-34.9064, -7.9355], [-34.8662, -7.8911], [-34.9022, -7.8859], [-34.9772, -7.9], [-35.0541, -7.88], [-35.0684, -7.8117], [-35.14, -7.7923], [-35.122, -7.8495], [-35.1, -7.8821], [-35.0488, -7.9092], [-35.031, -7.9298]]], "type": "Polygon"}, "properties": {"codarea": "2600054", "nome": "Abreu e Lima"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.14, -7.7923], [-35.0684, -7.8117], [-35.0541, -7.88], [-35.0363, -7.8678], [-35.0322, -7.8249], [-35.0392, -7.7674], [-35.0995, -7.7228], [-35.14, -7.7923]]], "type": "Polygon"}, "properties": {"codarea": "2601052", "nome": "Ara\u00e7oiaba"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.1401, -8.3099], [-35.1082, -8.334], [-35.0787, -8.3345], [-35.0244, -8.3636], [-34.9864, -8.3532], [-34.9609, -8.3667], [-34.9432, -8.3052], [-34.9521, -8.2977], [-34.9286, -8.2253], [-34.977, -8.2311], [-35.007, -8.206], [-35.0645, -8.2228], [-35.1095, -8.1899], [-35.1482, -8.1849], [-35.1646, -8.2173], [-35.215, -8.187], [-35.2648, -8.2428], [-35.2382, -8.2917], [-35.1907, -8.2938], [-35.1517, -8.2792], [-35.1401, -8.3099]]], "type": "Polygon"}, "properties": {"codarea": "2602902", "nome": "Cabo de Santo Agostinho"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.9961, -8.0369], [-34.9655, -8.0198], [-34.9621, -7.9741], [-35.0037, -7.9596], [-35.0001, -7.9292], [-35.0289, -7.9338], [-35.0367, -7.9402], [-35.0087, -7.972], [-35.0168, -7.9902], [-34.9961, -8.0369]]], "type": "Polygon"}, "properties": {"codarea": "2603454", "nome": "Camaragibe"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.9223, -7.6907], [-34.8855, -7.7144], [-34.8624, -7.7115], [-34.8482, -7.6878], [-34.8347, -7.6841], [-34.8088, -7.6302], [-34.8339, -7.5486], [-34.8538, -7.5396], [-34.9608, -7.5388], [-34.9851, -7.5], [-34.9854, -7.462], [-35.0778, -7.5138], [-35.0613, -7.5412], [-35.0725, -7.6183], [-34.9242, -7.6919], [-34.9223, -7.6907]]], "type": "Polygon"}, "properties": {"codarea": "2606200", "nome": "Goiana"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.8902, -7.8019], [-34.923, -7.8081], [-34.9422, -7.7224], [-34.9223, -7.6907], [-34.9242, -7.6919], [-34.962, -7.7083], [-34.9717, -7.7291], [-35.0452, -7.7445], [-35.0981, -7.7152], [-35.0995, -7.7228], [-35.0392, -7.7674], [-35.0322, -7.8249], [-35.0363, -7.8678], [-35.0541, -7.88], [-34.9772, -7.9], [-34.9022, -7.8859], [-34.8662, -7.8911], [-34.8411, -7.8451], [-34.8451, -7.8164], [-34.8902, -7.8019]]], "type": "Polygon"}, "properties": {"codarea": "2606804", "nome": "Igarassu"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.0482, -8.6094], [-35.0338, -8.5716], [-35.0068, -8.562], [-35.0024, -8.4972], [-34.9606, -8.3957], [-34.9609, -8.3667], [-34.9864, -8.3532], [-35.0244, -8.3636], [-35.0787, -8.3345], [-35.1082, -8.334], [-35.1401, -8.3099], [-35.1707, -8.3551], [-35.2381, -8.4175], [-35.203, -8.479], [-35.1453, -8.4895], [-35.1261, -8.5193], [-35.0775, -8.5293], [-35.0653, -8.5972], [-35.0482, -8.6094]]], "type": "Polygon"}, "properties": {"codarea": "2607208", "nome": "Ipojuca"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.8451, -7.8164], [-34.8232, -7.7517], [-34.8316, -7.7005], [-34.8482, -7.6878], [-34.8624, -7.7115], [-34.8902, -7.8019], [-34.8451, -7.8164]]], "type": "Polygon"}, "properties": {"codarea": "2607604", "nome": "Ilha de Itamarac\u00e1"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.8902, -7.8019], [-34.8624, -7.7115], [-34.8855, -7.7144], [-34.9223, -7.6907], [-34.9422, -7.7224], [-34.923, -7.8081], [-34.8902, -7.8019]]], "type": "Polygon"}, "properties": {"codarea": "2607752", "nome": "Itapissuma"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.0645, -8.2228], [-35.007, -8.206], [-34.977, -8.2311], [-34.9286, -8.2253], [-34.9088, -8.1551], [-34.953, -8.1386], [-34.9739, -8.0783], [-35.0167, -8.0558], [-35.0551, -8.0673], [-35.0582, -8.088], [-35.0971, -8.1616], [-35.0659, -8.2007], [-35.0645, -8.2228]]], "type": "Polygon"}, "properties": {"codarea": "2607901", "nome": "Jaboat\u00e3o dos Guararapes"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.0645, -8.2228], [-35.0659, -8.2007], [-35.0971, -8.1616], [-35.0582, -8.088], [-35.1244, -8.0784], [-35.1547, -8.0901], [-35.1976, -8.0814], [-35.2272, -8.1331], [-35.215, -8.187], [-35.1646, -8.2173], [-35.1482, -8.1849], [-35.1095, -8.1899], [-35.0645, -8.2228]]], "type": "Polygon"}, "properties": {"codarea": "2609402", "nome": "Moreno"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.8605, -8.0445], [-34.828, -7.9591], [-34.8641, -7.9746], [-34.9139, -7.9794], [-34.8729, -8.0173], [-34.8605, -8.0445]]], "type": "Polygon"}, "properties": {"codarea": "2609600", "nome": "Olinda"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.9139, -7.9794], [-34.8641, -7.9746], [-34.828, -7.9591], [-34.8245, -7.8845], [-34.8411, -7.8451], [-34.8662, -7.8911], [-34.9064, -7.9355], [-34.9619, -7.9156], [-35.0183, -7.9158], [-35.031, -7.9298], [-35.0289, -7.9338], [-35.0001, -7.9292], [-34.9678, -7.9418], [-34.9484, -7.9295], [-34.9092, -7.944], [-34.9139, -7.9794]]], "type": "Polygon"}, "properties": {"codarea": "2610707", "nome": "Paulista"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-35.0167, -8.0558], [-34.9739, -8.0783], [-34.953, -8.1386], [-34.9088, -8.1551], [-34.8605, -8.0445], [-34.8729, -8.0173], [-34.9139, -7.9794], [-34.9092, -7.944], [-34.9484, -7.9295], [-34.9678, -7.9418], [-35.0001, -7.9292], [-35.0037, -7.9596], [-34.9621, -7.9741], [-34.9655, -8.0198], [-34.9961, -8.0369], [-35.0167, -8.0558]]], "type": "Polygon"}, "properties": {"codarea": "2611606", "nome": "Recife"}, "type": "Feature"}, {"geometry": {"coordinates": [[[-34.9961, -8.0369], [-35.0168, -7.9902], [-35.0087, -7.972], [-35.0367, -7.9402], [-35.0736, -7.9508], [-35.099, -7.9725], [-35.1663, -7.9771], [-35.2223, -8.0189], [-35.2041, -8.0376], [-35.1976, -8.0814], [-35.1547, -8.0901], [-35.1244, -8.0784], [-35.0582, -8.088], [-35.0551, -8.0673], [-35.0167, -8.0558], [-34.9961, -8.0369]]], "type": "Polygon"}, "properties": {"codarea": "2613701", "nome": "S\u00e3o Louren\u00e7o da Mata"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_f5f59ade6e92513f390427e2395b626a.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["nome"];
+    let aliases = ["Munic\u00edpio:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_f5f59ade6e92513f390427e2395b626a.addTo(map_41df36cabfba81355ab781f5f17f27b0);
+        
+    
+            var marker_cluster_58767a770dfc7a1666cda0a491d80c46 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_829dd429408b33c9727340af25d043f0 = L.marker(
+                [-8.0606625, -34.8934288],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_903ba728b8370af840570bc86a68a4fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad6662d5d4a00513fc2a41106d472735 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15d7b2a7bb85f1708783d93c2278f8c1 = $(`<div id="html_15d7b2a7bb85f1708783d93c2278f8c1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Produtos Agroecológicos no Colégio Salesiano</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Vista<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_ad6662d5d4a00513fc2a41106d472735.setContent(html_15d7b2a7bb85f1708783d93c2278f8c1);
+            
+        
+
+        marker_829dd429408b33c9727340af25d043f0.bindPopup(popup_ad6662d5d4a00513fc2a41106d472735)
+        ;
+
+        
+    
+    
+            marker_829dd429408b33c9727340af25d043f0.bindTooltip(
+                `<div>
+                     Feira de Produtos Agroecológicos no Colégio Salesiano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_829dd429408b33c9727340af25d043f0.setIcon(icon_903ba728b8370af840570bc86a68a4fd);
+            
+    
+            var marker_075c2cb3cb85640e48303d9b15cf1b02 = L.marker(
+                [-8.0486065, -34.8781139],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_f61cb0abdabb081362a04a0199229b14 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_591a897575af13ab8830fd595680e7af = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cf691119dd43ae0af2c7394f3c3b9db6 = $(`<div id="html_cf691119dd43ae0af2c7394f3c3b9db6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feirinha da Secretaria da Criança e do Adolescente</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 5.5 horas         </div>         </div>`)[0];
+                popup_591a897575af13ab8830fd595680e7af.setContent(html_cf691119dd43ae0af2c7394f3c3b9db6);
+            
+        
+
+        marker_075c2cb3cb85640e48303d9b15cf1b02.bindPopup(popup_591a897575af13ab8830fd595680e7af)
+        ;
+
+        
+    
+    
+            marker_075c2cb3cb85640e48303d9b15cf1b02.bindTooltip(
+                `<div>
+                     Feirinha da Secretaria da Criança e do Adolescente
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_075c2cb3cb85640e48303d9b15cf1b02.setIcon(icon_f61cb0abdabb081362a04a0199229b14);
+            
+    
+            var marker_6702e567b187dd7a340555c415967fc3 = L.marker(
+                [-8.029036, -34.912128],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_a0696346a29ddcef3cd4b8e0c527434d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2f945ff1a5e46a3e5ba26e5e8303b6f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ce492e0c9f9abdc2bf4ed10f3750e1ed = $(`<div id="html_ce492e0c9f9abdc2bf4ed10f3750e1ed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecológico do Sítio da Trindade (2002) – RPA-03</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Casa Amarela<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_e2f945ff1a5e46a3e5ba26e5e8303b6f.setContent(html_ce492e0c9f9abdc2bf4ed10f3750e1ed);
+            
+        
+
+        marker_6702e567b187dd7a340555c415967fc3.bindPopup(popup_e2f945ff1a5e46a3e5ba26e5e8303b6f)
+        ;
+
+        
+    
+    
+            marker_6702e567b187dd7a340555c415967fc3.bindTooltip(
+                `<div>
+                     Agroecológico do Sítio da Trindade (2002) – RPA-03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6702e567b187dd7a340555c415967fc3.setIcon(icon_a0696346a29ddcef3cd4b8e0c527434d);
+            
+    
+            var marker_544689246d7968b10bfe804f5d8fdd6b = L.marker(
+                [-8.0564056, -34.884475],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_fa6006a6976913dc011492b2b85b66b7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc1727463b14c730b3a9b580fa315bcd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_845d00fdc53d1aa98f66bfd592f5fe91 = $(`<div id="html_845d00fdc53d1aa98f66bfd592f5fe91" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Orgânico da Gervásio Pires (2004) – RPA-01</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Vista<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_bc1727463b14c730b3a9b580fa315bcd.setContent(html_845d00fdc53d1aa98f66bfd592f5fe91);
+            
+        
+
+        marker_544689246d7968b10bfe804f5d8fdd6b.bindPopup(popup_bc1727463b14c730b3a9b580fa315bcd)
+        ;
+
+        
+    
+    
+            marker_544689246d7968b10bfe804f5d8fdd6b.bindTooltip(
+                `<div>
+                     Orgânico da Gervásio Pires (2004) – RPA-01
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_544689246d7968b10bfe804f5d8fdd6b.setIcon(icon_fa6006a6976913dc011492b2b85b66b7);
+            
+    
+            var marker_508018ba8a659771db63090149856655 = L.marker(
+                [-8.06784, -34.8751286],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_ee8309d22320b526b6573395c192f5bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ee8ae5fc5372b76aa292dc60394e336 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7958206a9940f86589c8b74aaa9feb3 = $(`<div id="html_a7958206a9940f86589c8b74aaa9feb3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Armazém do Campo Recife</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Antonio<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 8.0 horas         </div>         </div>`)[0];
+                popup_0ee8ae5fc5372b76aa292dc60394e336.setContent(html_a7958206a9940f86589c8b74aaa9feb3);
+            
+        
+
+        marker_508018ba8a659771db63090149856655.bindPopup(popup_0ee8ae5fc5372b76aa292dc60394e336)
+        ;
+
+        
+    
+    
+            marker_508018ba8a659771db63090149856655.bindTooltip(
+                `<div>
+                     Armazém do Campo Recife
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_508018ba8a659771db63090149856655.setIcon(icon_ee8309d22320b526b6573395c192f5bf);
+            
+    
+            var marker_067521542c63edb29857138089cd19d6 = L.marker(
+                [-8.06784, -34.8751286],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_4ba6e56a70fd7652db680431c37b29df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e2a3668c1e1d204b98a06f7d0ddace7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3a7ee79929d3070601c057d567f3189d = $(`<div id="html_3a7ee79929d3070601c057d567f3189d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Armazém do Campo Recife (Sábado)</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Antonio<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 10.0 horas         </div>         </div>`)[0];
+                popup_7e2a3668c1e1d204b98a06f7d0ddace7.setContent(html_3a7ee79929d3070601c057d567f3189d);
+            
+        
+
+        marker_067521542c63edb29857138089cd19d6.bindPopup(popup_7e2a3668c1e1d204b98a06f7d0ddace7)
+        ;
+
+        
+    
+    
+            marker_067521542c63edb29857138089cd19d6.bindTooltip(
+                `<div>
+                     Armazém do Campo Recife (Sábado)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_067521542c63edb29857138089cd19d6.setIcon(icon_4ba6e56a70fd7652db680431c37b29df);
+            
+    
+            var marker_a2c489e6890dacdac0be7ba0bfc085fc = L.marker(
+                [-8.0498497, -34.8912516],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_b70173c08f74229b21de4cfc43c4cddd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c167cd5d01f5b87cf34f1dce2000b7a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6122d1ee7bb22ebf8d29211906607314 = $(`<div id="html_6122d1ee7bb22ebf8d29211906607314" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecoloja Recife</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Vista<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 10.0 horas         </div>         </div>`)[0];
+                popup_4c167cd5d01f5b87cf34f1dce2000b7a.setContent(html_6122d1ee7bb22ebf8d29211906607314);
+            
+        
+
+        marker_a2c489e6890dacdac0be7ba0bfc085fc.bindPopup(popup_4c167cd5d01f5b87cf34f1dce2000b7a)
+        ;
+
+        
+    
+    
+            marker_a2c489e6890dacdac0be7ba0bfc085fc.bindTooltip(
+                `<div>
+                     Agroecoloja Recife
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2c489e6890dacdac0be7ba0bfc085fc.setIcon(icon_b70173c08f74229b21de4cfc43c4cddd);
+            
+    
+            var marker_93597eaff48256e1b0ae0be8af4118a0 = L.marker(
+                [-8.0551461, -34.8726279],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_5f9dd91a6a4261dec759f06ccfcac387 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fcb42a89a46ace9ed1d7c9ad5cd1381a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6869126cde7892ac25cf473b33a38581 = $(`<div id="html_6869126cde7892ac25cf473b33a38581" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira da Prefeitura do Recife</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_fcb42a89a46ace9ed1d7c9ad5cd1381a.setContent(html_6869126cde7892ac25cf473b33a38581);
+            
+        
+
+        marker_93597eaff48256e1b0ae0be8af4118a0.bindPopup(popup_fcb42a89a46ace9ed1d7c9ad5cd1381a)
+        ;
+
+        
+    
+    
+            marker_93597eaff48256e1b0ae0be8af4118a0.bindTooltip(
+                `<div>
+                     Feira da Prefeitura do Recife
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_93597eaff48256e1b0ae0be8af4118a0.setIcon(icon_5f9dd91a6a4261dec759f06ccfcac387);
+            
+    
+            var marker_ad754ea9ddc6e24fdb8307284972ebc5 = L.marker(
+                [-8.0601398, -34.8804122],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_ff7c544c24bb729ec1fbe583918efaf2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb69dbee72aa13ae297a5a746d65b8b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d7e9e211c0eb197ebd8ad942fa4f346 = $(`<div id="html_9d7e9e211c0eb197ebd8ad942fa4f346" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica do Tribunal de Contas de Pernambuco</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 2.0 horas         </div>         </div>`)[0];
+                popup_fb69dbee72aa13ae297a5a746d65b8b7.setContent(html_9d7e9e211c0eb197ebd8ad942fa4f346);
+            
+        
+
+        marker_ad754ea9ddc6e24fdb8307284972ebc5.bindPopup(popup_fb69dbee72aa13ae297a5a746d65b8b7)
+        ;
+
+        
+    
+    
+            marker_ad754ea9ddc6e24fdb8307284972ebc5.bindTooltip(
+                `<div>
+                     Feira Agroecológica do Tribunal de Contas de Pernambuco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ad754ea9ddc6e24fdb8307284972ebc5.setIcon(icon_ff7c544c24bb729ec1fbe583918efaf2);
+            
+    
+            var marker_b9d684412ddce301e77be64ff7d5f4dc = L.marker(
+                [-8.0548164, -34.8803783],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_da87bdd53d45b05c9f436741ae2872cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b96e511b8a311d4594f7e686978d7ba7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0f677acf3c951e001d6f0793117fb1ea = $(`<div id="html_0f677acf3c951e001d6f0793117fb1ea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira do INSS – Instituto Nacional do Seguro Social</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_b96e511b8a311d4594f7e686978d7ba7.setContent(html_0f677acf3c951e001d6f0793117fb1ea);
+            
+        
+
+        marker_b9d684412ddce301e77be64ff7d5f4dc.bindPopup(popup_b96e511b8a311d4594f7e686978d7ba7)
+        ;
+
+        
+    
+    
+            marker_b9d684412ddce301e77be64ff7d5f4dc.bindTooltip(
+                `<div>
+                     Feira do INSS – Instituto Nacional do Seguro Social
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b9d684412ddce301e77be64ff7d5f4dc.setIcon(icon_da87bdd53d45b05c9f436741ae2872cd);
+            
+    
+            var marker_e0de5979a88778f275fe9a58866cef8e = L.marker(
+                [-8.0507063, -34.8890635],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_48addb6218c184e434d43feb6e723f9d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_26f6cb93eaf873e7c9a0692a153cd474 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df0d7cb32cab935c8dddd40a37b93fbb = $(`<div id="html_df0d7cb32cab935c8dddd40a37b93fbb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira da Faculdade SENAC - PE</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_26f6cb93eaf873e7c9a0692a153cd474.setContent(html_df0d7cb32cab935c8dddd40a37b93fbb);
+            
+        
+
+        marker_e0de5979a88778f275fe9a58866cef8e.bindPopup(popup_26f6cb93eaf873e7c9a0692a153cd474)
+        ;
+
+        
+    
+    
+            marker_e0de5979a88778f275fe9a58866cef8e.bindTooltip(
+                `<div>
+                     Feira da Faculdade SENAC - PE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0de5979a88778f275fe9a58866cef8e.setIcon(icon_48addb6218c184e434d43feb6e723f9d);
+            
+    
+            var marker_0ca764d3513a387b8e123e5a4fa937ba = L.marker(
+                [-8.0640776, -34.9359957],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_85797a7a517962cbaebcc72c3ac512da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0471b86061cbeadd5ecf53ec06694abd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d543b56eb28d9a63de97d6ecbfbdf1eb = $(`<div id="html_d543b56eb28d9a63de97d6ecbfbdf1eb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Orgânicos da Estácio Abdias</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Madalena<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_0471b86061cbeadd5ecf53ec06694abd.setContent(html_d543b56eb28d9a63de97d6ecbfbdf1eb);
+            
+        
+
+        marker_0ca764d3513a387b8e123e5a4fa937ba.bindPopup(popup_0471b86061cbeadd5ecf53ec06694abd)
+        ;
+
+        
+    
+    
+            marker_0ca764d3513a387b8e123e5a4fa937ba.bindTooltip(
+                `<div>
+                     Feira de Orgânicos da Estácio Abdias
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0ca764d3513a387b8e123e5a4fa937ba.setIcon(icon_85797a7a517962cbaebcc72c3ac512da);
+            
+    
+            var marker_0bcf7a431b1ad5a9105b5983d7213bf5 = L.marker(
+                [-8.0429846, -34.8973963],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_a62484caf0a6694dd6739aacea59d939 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ea1a0517c7d0bae03ba7186216a8fc6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a96d64a890082659c98e74dc6a82179b = $(`<div id="html_a96d64a890082659c98e74dc6a82179b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Orgânicos do Incra</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Aflitos<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 7.0 horas         </div>         </div>`)[0];
+                popup_0ea1a0517c7d0bae03ba7186216a8fc6.setContent(html_a96d64a890082659c98e74dc6a82179b);
+            
+        
+
+        marker_0bcf7a431b1ad5a9105b5983d7213bf5.bindPopup(popup_0ea1a0517c7d0bae03ba7186216a8fc6)
+        ;
+
+        
+    
+    
+            marker_0bcf7a431b1ad5a9105b5983d7213bf5.bindTooltip(
+                `<div>
+                     Feira de Orgânicos do Incra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0bcf7a431b1ad5a9105b5983d7213bf5.setIcon(icon_a62484caf0a6694dd6739aacea59d939);
+            
+    
+            var marker_dca90d4dfedfce0da195dbe68fb149bb = L.marker(
+                [-8.0502492, -34.8966863],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_d154e30ba07fbcfc42f245c279bf386f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b565892049d75c5e6dce7b63994a277d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1cfe9c9e707f2a660b14c4a94ea72fc9 = $(`<div id="html_1cfe9c9e707f2a660b14c4a94ea72fc9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feirinha da Semas</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Aflitos<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 5.5 horas         </div>         </div>`)[0];
+                popup_b565892049d75c5e6dce7b63994a277d.setContent(html_1cfe9c9e707f2a660b14c4a94ea72fc9);
+            
+        
+
+        marker_dca90d4dfedfce0da195dbe68fb149bb.bindPopup(popup_b565892049d75c5e6dce7b63994a277d)
+        ;
+
+        
+    
+    
+            marker_dca90d4dfedfce0da195dbe68fb149bb.bindTooltip(
+                `<div>
+                     Feirinha da Semas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dca90d4dfedfce0da195dbe68fb149bb.setIcon(icon_d154e30ba07fbcfc42f245c279bf386f);
+            
+    
+            var marker_a2d052c13f072a2a29da6e491bf045fc = L.marker(
+                [-8.0410671, -34.8813309],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_a21bfefaaf28a49aca7413d09c00f824 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e76fd8fc438ab4e164d9c7da7e181fc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_42ce2ce92bddd0ce79f323953ce377d0 = $(`<div id="html_42ce2ce92bddd0ce79f323953ce377d0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica da Procuradoria da República em Pernambuco</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 3.0 horas         </div>         </div>`)[0];
+                popup_3e76fd8fc438ab4e164d9c7da7e181fc.setContent(html_42ce2ce92bddd0ce79f323953ce377d0);
+            
+        
+
+        marker_a2d052c13f072a2a29da6e491bf045fc.bindPopup(popup_3e76fd8fc438ab4e164d9c7da7e181fc)
+        ;
+
+        
+    
+    
+            marker_a2d052c13f072a2a29da6e491bf045fc.bindTooltip(
+                `<div>
+                     Feira Orgânica da Procuradoria da República em Pernambuco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2d052c13f072a2a29da6e491bf045fc.setIcon(icon_a21bfefaaf28a49aca7413d09c00f824);
+            
+    
+            var marker_59c3cc5c86d41c86a5618acccc3aba76 = L.marker(
+                [-8.0500509, -34.9103418],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_616360f3cd4fb03cfcf56f1617b0c405 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_843dc041331a03a9c1cb5bdf567c1fd4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d2975cc8c0092ac56650da6d91698555 = $(`<div id="html_d2975cc8c0092ac56650da6d91698555" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira da Madalena</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Madalena<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_843dc041331a03a9c1cb5bdf567c1fd4.setContent(html_d2975cc8c0092ac56650da6d91698555);
+            
+        
+
+        marker_59c3cc5c86d41c86a5618acccc3aba76.bindPopup(popup_843dc041331a03a9c1cb5bdf567c1fd4)
+        ;
+
+        
+    
+    
+            marker_59c3cc5c86d41c86a5618acccc3aba76.bindTooltip(
+                `<div>
+                     Feira da Madalena
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_59c3cc5c86d41c86a5618acccc3aba76.setIcon(icon_616360f3cd4fb03cfcf56f1617b0c405);
+            
+    
+            var marker_5f7b0b34d932887755ded58b8ce4ebf2 = L.marker(
+                [-8.0447776, -34.924923],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_43a48f63afbe7039a51e106d7da1d543 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9993403a7359a03e5814ebabcb28327c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_114b43c714f64ee83190721649bde92d = $(`<div id="html_114b43c714f64ee83190721649bde92d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecológica da Juventude do Cordeiro (2006) – RPA-04</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Cordeiro<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_9993403a7359a03e5814ebabcb28327c.setContent(html_114b43c714f64ee83190721649bde92d);
+            
+        
+
+        marker_5f7b0b34d932887755ded58b8ce4ebf2.bindPopup(popup_9993403a7359a03e5814ebabcb28327c)
+        ;
+
+        
+    
+    
+            marker_5f7b0b34d932887755ded58b8ce4ebf2.bindTooltip(
+                `<div>
+                     Agroecológica da Juventude do Cordeiro (2006) – RPA-04
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f7b0b34d932887755ded58b8ce4ebf2.setIcon(icon_43a48f63afbe7039a51e106d7da1d543);
+            
+    
+            var marker_a816a432f2ef5429e97a47b8eadf082c = L.marker(
+                [-8.069663, -34.8958659],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_4ef23f115f63b9ae5b6252a1b4ed1f5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ee61bfc72a20eab8953789d6d0a9a9b4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f84a30c0f058bd6c16a24a8ede62b387 = $(`<div id="html_f84a30c0f058bd6c16a24a8ede62b387" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira do Fórum Desembargador Rodolfo Aureliano</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Ilha Joana Bezerra<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_ee61bfc72a20eab8953789d6d0a9a9b4.setContent(html_f84a30c0f058bd6c16a24a8ede62b387);
+            
+        
+
+        marker_a816a432f2ef5429e97a47b8eadf082c.bindPopup(popup_ee61bfc72a20eab8953789d6d0a9a9b4)
+        ;
+
+        
+    
+    
+            marker_a816a432f2ef5429e97a47b8eadf082c.bindTooltip(
+                `<div>
+                     Feira do Fórum Desembargador Rodolfo Aureliano
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a816a432f2ef5429e97a47b8eadf082c.setIcon(icon_4ef23f115f63b9ae5b6252a1b4ed1f5b);
+            
+    
+            var marker_e0312a989adc3816889750ed73d7c5c9 = L.marker(
+                [-8.0338892, -34.9189342],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_6f723715100c8f43052192dec102cea4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04011e39abd1cb6ec37bcd3d0518b02f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_892cba3beeda863baee436e260edb671 = $(`<div id="html_892cba3beeda863baee436e260edb671" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Produtos Orgânicos de Casa Forte (2004) – RPA-03</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Casa Forte<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_04011e39abd1cb6ec37bcd3d0518b02f.setContent(html_892cba3beeda863baee436e260edb671);
+            
+        
+
+        marker_e0312a989adc3816889750ed73d7c5c9.bindPopup(popup_04011e39abd1cb6ec37bcd3d0518b02f)
+        ;
+
+        
+    
+    
+            marker_e0312a989adc3816889750ed73d7c5c9.bindTooltip(
+                `<div>
+                     Feira de Produtos Orgânicos de Casa Forte (2004) – RPA-03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e0312a989adc3816889750ed73d7c5c9.setIcon(icon_6f723715100c8f43052192dec102cea4);
+            
+    
+            var marker_0996f7471b3fd78cb2b15cb7bc6b2ee9 = L.marker(
+                [-8.0423058, -34.8946325],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_6c86afa8e8c1384adecaed022c1b0875 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4ea38c38431405c4c9cac8659f29407 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6a24f3a9a1034e1ea615f0dabef07257 = $(`<div id="html_6a24f3a9a1034e1ea615f0dabef07257" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica do Espinheiro (2005) – RPA-02</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Espinheiro<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_c4ea38c38431405c4c9cac8659f29407.setContent(html_6a24f3a9a1034e1ea615f0dabef07257);
+            
+        
+
+        marker_0996f7471b3fd78cb2b15cb7bc6b2ee9.bindPopup(popup_c4ea38c38431405c4c9cac8659f29407)
+        ;
+
+        
+    
+    
+            marker_0996f7471b3fd78cb2b15cb7bc6b2ee9.bindTooltip(
+                `<div>
+                     Feira Orgânica do Espinheiro (2005) – RPA-02
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0996f7471b3fd78cb2b15cb7bc6b2ee9.setIcon(icon_6c86afa8e8c1384adecaed022c1b0875);
+            
+    
+            var marker_5a93b99a38dfe8c885c5304a31f1a4ef = L.marker(
+                [-8.1310063, -34.9027127],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_5531fc15830374de86349b190498f2cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0dc1929d954296b769a4e6c9377b34c0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c1f80a154a1897771dd9273f8f0771ee = $(`<div id="html_c1f80a154a1897771dd9273f8f0771ee" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica Chico Mendes (2005) – RPA-06</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Viagem<br>             <b>🏙️ Zona:</b> Zona Sul<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_0dc1929d954296b769a4e6c9377b34c0.setContent(html_c1f80a154a1897771dd9273f8f0771ee);
+            
+        
+
+        marker_5a93b99a38dfe8c885c5304a31f1a4ef.bindPopup(popup_0dc1929d954296b769a4e6c9377b34c0)
+        ;
+
+        
+    
+    
+            marker_5a93b99a38dfe8c885c5304a31f1a4ef.bindTooltip(
+                `<div>
+                     Feira Agroecológica Chico Mendes (2005) – RPA-06
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a93b99a38dfe8c885c5304a31f1a4ef.setIcon(icon_5531fc15830374de86349b190498f2cf);
+            
+    
+            var marker_3e7cd1c011db2f9f2cefd92722b797fa = L.marker(
+                [-8.0601398, -34.8804122],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_19e6b427e2bd8c18959f9486897288ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f3f4c60c22d8eef8f7bb14825ae4b7d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_77c7b3a650eb005a2b2dbc05d4ee2251 = $(`<div id="html_77c7b3a650eb005a2b2dbc05d4ee2251" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecológica da Aurora (2008) – RPA-01</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Vista<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_9f3f4c60c22d8eef8f7bb14825ae4b7d.setContent(html_77c7b3a650eb005a2b2dbc05d4ee2251);
+            
+        
+
+        marker_3e7cd1c011db2f9f2cefd92722b797fa.bindPopup(popup_9f3f4c60c22d8eef8f7bb14825ae4b7d)
+        ;
+
+        
+    
+    
+            marker_3e7cd1c011db2f9f2cefd92722b797fa.bindTooltip(
+                `<div>
+                     Agroecológica da Aurora (2008) – RPA-01
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3e7cd1c011db2f9f2cefd92722b797fa.setIcon(icon_19e6b427e2bd8c18959f9486897288ea);
+            
+    
+            var marker_4d931c9aa3113526bcfabf5661c23c70 = L.marker(
+                [-8.0524236, -34.9510615],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_828d5648397b6e9a960a8a1f4a780137 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1a5f44137d214152ae3aeee822fe7d9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_661f95831daa9c26944dcb8c2ade8793 = $(`<div id="html_661f95831daa9c26944dcb8c2ade8793" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Economia Solidária e Agroecológica UFPE/CCSA</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Várzea<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 8.0 horas         </div>         </div>`)[0];
+                popup_f1a5f44137d214152ae3aeee822fe7d9.setContent(html_661f95831daa9c26944dcb8c2ade8793);
+            
+        
+
+        marker_4d931c9aa3113526bcfabf5661c23c70.bindPopup(popup_f1a5f44137d214152ae3aeee822fe7d9)
+        ;
+
+        
+    
+    
+            marker_4d931c9aa3113526bcfabf5661c23c70.bindTooltip(
+                `<div>
+                     Feira de Economia Solidária e Agroecológica UFPE/CCSA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4d931c9aa3113526bcfabf5661c23c70.setIcon(icon_828d5648397b6e9a960a8a1f4a780137);
+            
+    
+            var marker_efaf2ff6e4019bdca61d0ca4b2c811f7 = L.marker(
+                [-8.0498975, -34.8825277],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_fac58375cb9d30a4d0668c3bb22f1d11 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac00bb30518d837a156cb303e6d884c3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d2a8a825419e8dd18b07e1a59b53aabc = $(`<div id="html_d2a8a825419e8dd18b07e1a59b53aabc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Espaço Agroecológico de Santo Amarosant</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santo Amaro<br>             <b>🏙️ Zona:</b> nan<br>             <b>⏱️ Duração:</b> 4.5 horas         </div>         </div>`)[0];
+                popup_ac00bb30518d837a156cb303e6d884c3.setContent(html_d2a8a825419e8dd18b07e1a59b53aabc);
+            
+        
+
+        marker_efaf2ff6e4019bdca61d0ca4b2c811f7.bindPopup(popup_ac00bb30518d837a156cb303e6d884c3)
+        ;
+
+        
+    
+    
+            marker_efaf2ff6e4019bdca61d0ca4b2c811f7.bindTooltip(
+                `<div>
+                     Espaço Agroecológico de Santo Amarosant
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_efaf2ff6e4019bdca61d0ca4b2c811f7.setIcon(icon_fac58375cb9d30a4d0668c3bb22f1d11);
+            
+    
+            var marker_6d027c6cc061dffb9a93f89de9f62749 = L.marker(
+                [-8.0423058, -34.8946325],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_7c860916391263a86bf265545950efcc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32d2b2974d599743ad285c6556f2158a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_50592740ba1652eb04c36c01b45c0343 = $(`<div id="html_50592740ba1652eb04c36c01b45c0343" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica do Espinheiro</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Espinheiro<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_32d2b2974d599743ad285c6556f2158a.setContent(html_50592740ba1652eb04c36c01b45c0343);
+            
+        
+
+        marker_6d027c6cc061dffb9a93f89de9f62749.bindPopup(popup_32d2b2974d599743ad285c6556f2158a)
+        ;
+
+        
+    
+    
+            marker_6d027c6cc061dffb9a93f89de9f62749.bindTooltip(
+                `<div>
+                     Feira Agroecológica do Espinheiro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d027c6cc061dffb9a93f89de9f62749.setIcon(icon_7c860916391263a86bf265545950efcc);
+            
+    
+            var marker_f1197206913b4371915c0f4405377f33 = L.marker(
+                [-8.0304387, -34.925636],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_1388bf653cdacc0514ca07b772881b97 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1ac38fafc259fa5fd72b866a827d9b1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_11e0c73f4213e293a570cd4eba0e8981 = $(`<div id="html_11e0c73f4213e293a570cd4eba0e8981" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica do Museu do Homem do Nordeste</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Parnamirim<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_e1ac38fafc259fa5fd72b866a827d9b1.setContent(html_11e0c73f4213e293a570cd4eba0e8981);
+            
+        
+
+        marker_f1197206913b4371915c0f4405377f33.bindPopup(popup_e1ac38fafc259fa5fd72b866a827d9b1)
+        ;
+
+        
+    
+    
+            marker_f1197206913b4371915c0f4405377f33.bindTooltip(
+                `<div>
+                     Feira Agroecológica do Museu do Homem do Nordeste
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f1197206913b4371915c0f4405377f33.setIcon(icon_1388bf653cdacc0514ca07b772881b97);
+            
+    
+            var marker_dca45dea3cb6183009fefc8344527265 = L.marker(
+                [-8.0645, -34.9123],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_01e2c95681201d8db6e38d32a6c53a1a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f14f9030f932a653a238fbccc41a0c1e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0fd24e6f55dd9785813348224fe3d792 = $(`<div id="html_0fd24e6f55dd9785813348224fe3d792" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Banca de Orgânicos na Secretaria Estadual de Saúde</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Bongi<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_f14f9030f932a653a238fbccc41a0c1e.setContent(html_0fd24e6f55dd9785813348224fe3d792);
+            
+        
+
+        marker_dca45dea3cb6183009fefc8344527265.bindPopup(popup_f14f9030f932a653a238fbccc41a0c1e)
+        ;
+
+        
+    
+    
+            marker_dca45dea3cb6183009fefc8344527265.bindTooltip(
+                `<div>
+                     Banca de Orgânicos na Secretaria Estadual de Saúde
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dca45dea3cb6183009fefc8344527265.setIcon(icon_01e2c95681201d8db6e38d32a6c53a1a);
+            
+    
+            var marker_3d77b963b1ec7da43cf8468aa111e971 = L.marker(
+                [-8.0752233, -34.9793157],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_f3e88b93e0601b8d1f45ccbc73aea03b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d0f20ac3cbf7a874ff37b05e8eebe870 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f140f64600c663f009d2b8ff4744e62b = $(`<div id="html_f140f64600c663f009d2b8ff4744e62b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Orgânicos da CEASA</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Curado<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_d0f20ac3cbf7a874ff37b05e8eebe870.setContent(html_f140f64600c663f009d2b8ff4744e62b);
+            
+        
+
+        marker_3d77b963b1ec7da43cf8468aa111e971.bindPopup(popup_d0f20ac3cbf7a874ff37b05e8eebe870)
+        ;
+
+        
+    
+    
+            marker_3d77b963b1ec7da43cf8468aa111e971.bindTooltip(
+                `<div>
+                     Feira de Orgânicos da CEASA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3d77b963b1ec7da43cf8468aa111e971.setIcon(icon_f3e88b93e0601b8d1f45ccbc73aea03b);
+            
+    
+            var marker_a537f15a544d3b30efa05023d5e0b6bc = L.marker(
+                [-8.05167, -34.95083],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_7093c971c7995845f6690c66a32c84bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e9188dd3f950efea4b77d838c95e948 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d79fd7a6a11ad183dd770d075be473cf = $(`<div id="html_d79fd7a6a11ad183dd770d075be473cf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Banca de Orgânicos na Universidade Federal de Pernambuco</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Cidade Universitária<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 7.0 horas         </div>         </div>`)[0];
+                popup_7e9188dd3f950efea4b77d838c95e948.setContent(html_d79fd7a6a11ad183dd770d075be473cf);
+            
+        
+
+        marker_a537f15a544d3b30efa05023d5e0b6bc.bindPopup(popup_7e9188dd3f950efea4b77d838c95e948)
+        ;
+
+        
+    
+    
+            marker_a537f15a544d3b30efa05023d5e0b6bc.bindTooltip(
+                `<div>
+                     Banca de Orgânicos na Universidade Federal de Pernambuco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a537f15a544d3b30efa05023d5e0b6bc.setIcon(icon_7093c971c7995845f6690c66a32c84bd);
+            
+    
+            var marker_417e2f737976e37d89661d457b22c836 = L.marker(
+                [-8.1706562, -34.9319454],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_b0a53b5ebb1d9e2c7ce4587f23d68618 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15b7a0a639adcb4ae48705f3afb2135c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6e1ba5f8134956ae8ccc4a0e22fe5853 = $(`<div id="html_6e1ba5f8134956ae8ccc4a0e22fe5853" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica em Jaboatão dos Guararapes</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Cajueiro Seco<br>             <b>🏙️ Zona:</b> Jaboatão<br>             <b>⏱️ Duração:</b> 8.0 horas         </div>         </div>`)[0];
+                popup_15b7a0a639adcb4ae48705f3afb2135c.setContent(html_6e1ba5f8134956ae8ccc4a0e22fe5853);
+            
+        
+
+        marker_417e2f737976e37d89661d457b22c836.bindPopup(popup_15b7a0a639adcb4ae48705f3afb2135c)
+        ;
+
+        
+    
+    
+            marker_417e2f737976e37d89661d457b22c836.bindTooltip(
+                `<div>
+                     Feira Orgânica em Jaboatão dos Guararapes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_417e2f737976e37d89661d457b22c836.setIcon(icon_b0a53b5ebb1d9e2c7ce4587f23d68618);
+            
+    
+            var marker_77cb506cd5727aa6cdabfc682f8559b5 = L.marker(
+                [-8.0430747, -34.941111],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_e64bf7b1a6ed9a1dec87dcb8bac50f37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_010ccd1bcfa7b346d1ba7638eadcd757 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b04d6fb81b6effe3c4db0a2276d8e637 = $(`<div id="html_b04d6fb81b6effe3c4db0a2276d8e637" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica do Condomínio Sudene</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Iputinga<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 3.0 horas         </div>         </div>`)[0];
+                popup_010ccd1bcfa7b346d1ba7638eadcd757.setContent(html_b04d6fb81b6effe3c4db0a2276d8e637);
+            
+        
+
+        marker_77cb506cd5727aa6cdabfc682f8559b5.bindPopup(popup_010ccd1bcfa7b346d1ba7638eadcd757)
+        ;
+
+        
+    
+    
+            marker_77cb506cd5727aa6cdabfc682f8559b5.bindTooltip(
+                `<div>
+                     Feira Orgânica do Condomínio Sudene
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_77cb506cd5727aa6cdabfc682f8559b5.setIcon(icon_e64bf7b1a6ed9a1dec87dcb8bac50f37);
+            
+    
+            var marker_5f91f0825e8b99ba4c213980988226d4 = L.marker(
+                [-8.1756855, -34.9187594],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_0ea99f69cad0ffb5926422d041b9a2b3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30c2c9184612d362c0031bb6972f3bad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b4a9721f201e51170234a22042aa841c = $(`<div id="html_b4a9721f201e51170234a22042aa841c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Produtos Agroecológicos no Shopping Guararapes</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Piedade<br>             <b>🏙️ Zona:</b> Jaboatão<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_30c2c9184612d362c0031bb6972f3bad.setContent(html_b4a9721f201e51170234a22042aa841c);
+            
+        
+
+        marker_5f91f0825e8b99ba4c213980988226d4.bindPopup(popup_30c2c9184612d362c0031bb6972f3bad)
+        ;
+
+        
+    
+    
+            marker_5f91f0825e8b99ba4c213980988226d4.bindTooltip(
+                `<div>
+                     Feira de Produtos Agroecológicos no Shopping Guararapes
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f91f0825e8b99ba4c213980988226d4.setIcon(icon_0ea99f69cad0ffb5926422d041b9a2b3);
+            
+    
+            var marker_ffb4ca70c093d493a77d08da872ac49e = L.marker(
+                [-8.1084029, -34.8885404],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_f4aa52a3c85cbe193c0fc60c7920ab1a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0735c7f972b645fa85ccd7afebc81a17 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_59415494465389456d5593d820fd60f5 = $(`<div id="html_59415494465389456d5593d820fd60f5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecológico de Boa Viagem (2001) – RPA-03</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Viagem<br>             <b>🏙️ Zona:</b> Zona Sul<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_0735c7f972b645fa85ccd7afebc81a17.setContent(html_59415494465389456d5593d820fd60f5);
+            
+        
+
+        marker_ffb4ca70c093d493a77d08da872ac49e.bindPopup(popup_0735c7f972b645fa85ccd7afebc81a17)
+        ;
+
+        
+    
+    
+            marker_ffb4ca70c093d493a77d08da872ac49e.bindTooltip(
+                `<div>
+                     Agroecológico de Boa Viagem (2001) – RPA-03
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ffb4ca70c093d493a77d08da872ac49e.setIcon(icon_f4aa52a3c85cbe193c0fc60c7920ab1a);
+            
+    
+            var marker_6440fbae1221ac41bc7d020475474c10 = L.marker(
+                [-8.0498497, -34.8912516],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_6fc76b1f6dbd00410432cd5bda8d14ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_aa1d99333bc158dda8b7650592fad5d3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c86d581aeee0419c768527716371e00 = $(`<div id="html_1c86d581aeee0419c768527716371e00" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Agroecoloja Recife (Sábado)</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Vista<br>             <b>🏙️ Zona:</b> Centro<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_aa1d99333bc158dda8b7650592fad5d3.setContent(html_1c86d581aeee0419c768527716371e00);
+            
+        
+
+        marker_6440fbae1221ac41bc7d020475474c10.bindPopup(popup_aa1d99333bc158dda8b7650592fad5d3)
+        ;
+
+        
+    
+    
+            marker_6440fbae1221ac41bc7d020475474c10.bindTooltip(
+                `<div>
+                     Agroecoloja Recife (Sábado)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6440fbae1221ac41bc7d020475474c10.setIcon(icon_6fc76b1f6dbd00410432cd5bda8d14ce);
+            
+    
+            var marker_72478c7999e28760e97952d4d4e61194 = L.marker(
+                [-8.0410671, -34.8813309],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_56a3f58910c5426a0eb0c03084299b05 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5cd307c20093fdd4f8d6aacff4078865 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0641365151d55412ed1d11f50d9b472c = $(`<div id="html_0641365151d55412ed1d11f50d9b472c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica do IPA (Instituto Agronômico de PE)</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> San Martin<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 3.0 horas         </div>         </div>`)[0];
+                popup_5cd307c20093fdd4f8d6aacff4078865.setContent(html_0641365151d55412ed1d11f50d9b472c);
+            
+        
+
+        marker_72478c7999e28760e97952d4d4e61194.bindPopup(popup_5cd307c20093fdd4f8d6aacff4078865)
+        ;
+
+        
+    
+    
+            marker_72478c7999e28760e97952d4d4e61194.bindTooltip(
+                `<div>
+                     Feira Orgânica do IPA (Instituto Agronômico de PE)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_72478c7999e28760e97952d4d4e61194.setIcon(icon_56a3f58910c5426a0eb0c03084299b05);
+            
+    
+            var marker_9037b9c81f982268b46bbaa92bd6983a = L.marker(
+                [-8.0860101, -34.8945623],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_5da960cb69f434d7ec14b3099a704da0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ec7702857fc232068e8ac54b333810e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e2b34a370f8c82e23fb9533c968634bb = $(`<div id="html_e2b34a370f8c82e23fb9533c968634bb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica do RioMar</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Pina<br>             <b>🏙️ Zona:</b> Zona Sul<br>             <b>⏱️ Duração:</b> 3.0 horas         </div>         </div>`)[0];
+                popup_3ec7702857fc232068e8ac54b333810e.setContent(html_e2b34a370f8c82e23fb9533c968634bb);
+            
+        
+
+        marker_9037b9c81f982268b46bbaa92bd6983a.bindPopup(popup_3ec7702857fc232068e8ac54b333810e)
+        ;
+
+        
+    
+    
+            marker_9037b9c81f982268b46bbaa92bd6983a.bindTooltip(
+                `<div>
+                     Feira Agroecológica do RioMar
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9037b9c81f982268b46bbaa92bd6983a.setIcon(icon_5da960cb69f434d7ec14b3099a704da0);
+            
+    
+            var marker_b97cc2ab6ab38a75865f43d46cb2ce7b = L.marker(
+                [-8.1190199, -34.9048827],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_b8997e6a886554446c71bf63e6f01d92 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4650cd38b56d765fedce0bd84104276d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cb808626d2a433fec5114fc7b736d7e2 = $(`<div id="html_cb808626d2a433fec5114fc7b736d7e2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Orgânicos do Shopping Recife - Projeto Pernambuco Agroecológico</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Viagem<br>             <b>🏙️ Zona:</b> Zona Sul<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_4650cd38b56d765fedce0bd84104276d.setContent(html_cb808626d2a433fec5114fc7b736d7e2);
+            
+        
+
+        marker_b97cc2ab6ab38a75865f43d46cb2ce7b.bindPopup(popup_4650cd38b56d765fedce0bd84104276d)
+        ;
+
+        
+    
+    
+            marker_b97cc2ab6ab38a75865f43d46cb2ce7b.bindTooltip(
+                `<div>
+                     Feira de Orgânicos do Shopping Recife - Projeto Pernambuco Agroecológico
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b97cc2ab6ab38a75865f43d46cb2ce7b.setIcon(icon_b8997e6a886554446c71bf63e6f01d92);
+            
+    
+            var marker_8b411947c3b8e89201777e0ff6892457 = L.marker(
+                [-8.1054747, -34.8890035],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_affd2db9e77a83ca01fdc5f044b3c291 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f25ba56f452efa99e2aaf4cb6f1bf0d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a6850a46aa6195f401fe36415aa48234 = $(`<div id="html_a6850a46aa6195f401fe36415aa48234" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feirinha da Coopergás</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Boa Viagem<br>             <b>🏙️ Zona:</b> Zona Sul<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_9f25ba56f452efa99e2aaf4cb6f1bf0d.setContent(html_a6850a46aa6195f401fe36415aa48234);
+            
+        
+
+        marker_8b411947c3b8e89201777e0ff6892457.bindPopup(popup_9f25ba56f452efa99e2aaf4cb6f1bf0d)
+        ;
+
+        
+    
+    
+            marker_8b411947c3b8e89201777e0ff6892457.bindTooltip(
+                `<div>
+                     Feirinha da Coopergás
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8b411947c3b8e89201777e0ff6892457.setIcon(icon_affd2db9e77a83ca01fdc5f044b3c291);
+            
+    
+            var marker_74c864a6553215a034b14bfd1340d334 = L.marker(
+                [-8.0469755, -34.9361151],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_b7b7c1c6ff154a7877d9ba752d4424b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4248b4a5228db4c2a5cce0dc2a5b9f4e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c3c7cbefbd47c6dee94e7061bb496b4b = $(`<div id="html_c3c7cbefbd47c6dee94e7061bb496b4b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira da Iputinga</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Iputinga<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_4248b4a5228db4c2a5cce0dc2a5b9f4e.setContent(html_c3c7cbefbd47c6dee94e7061bb496b4b);
+            
+        
+
+        marker_74c864a6553215a034b14bfd1340d334.bindPopup(popup_4248b4a5228db4c2a5cce0dc2a5b9f4e)
+        ;
+
+        
+    
+    
+            marker_74c864a6553215a034b14bfd1340d334.bindTooltip(
+                `<div>
+                     Feira da Iputinga
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_74c864a6553215a034b14bfd1340d334.setIcon(icon_b7b7c1c6ff154a7877d9ba752d4424b9);
+            
+    
+            var marker_dd46bb269182cd28437322bd74157d0c = L.marker(
+                [-8.0440912, -34.9583219],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_1d9d20d25a8db08818d5ddd3c629d09a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f3afb088acf65f764bf63d4955fd894d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_315c3adc6952cd782cb42cd98fb500f4 = $(`<div id="html_315c3adc6952cd782cb42cd98fb500f4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira da Secretaria de Educação de Recife</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Várzea<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_f3afb088acf65f764bf63d4955fd894d.setContent(html_315c3adc6952cd782cb42cd98fb500f4);
+            
+        
+
+        marker_dd46bb269182cd28437322bd74157d0c.bindPopup(popup_f3afb088acf65f764bf63d4955fd894d)
+        ;
+
+        
+    
+    
+            marker_dd46bb269182cd28437322bd74157d0c.bindTooltip(
+                `<div>
+                     Feira da Secretaria de Educação de Recife
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd46bb269182cd28437322bd74157d0c.setIcon(icon_1d9d20d25a8db08818d5ddd3c629d09a);
+            
+    
+            var marker_f8366fc17dbe5b83984e19665cddf07e = L.marker(
+                [-8.025391, -34.8637317],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_591907dd3ac3219b9c16bd8764afeb73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f1726d91f91ffa24730bbc26bf61f3d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_92c798012f884754e6320aae6b36d4a9 = $(`<div id="html_92c798012f884754e6320aae6b36d4a9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica do Fórum de Olinda</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Santa Tereza<br>             <b>🏙️ Zona:</b> Olinda<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_4f1726d91f91ffa24730bbc26bf61f3d.setContent(html_92c798012f884754e6320aae6b36d4a9);
+            
+        
+
+        marker_f8366fc17dbe5b83984e19665cddf07e.bindPopup(popup_4f1726d91f91ffa24730bbc26bf61f3d)
+        ;
+
+        
+    
+    
+            marker_f8366fc17dbe5b83984e19665cddf07e.bindTooltip(
+                `<div>
+                     Feira Agroecológica do Fórum de Olinda
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f8366fc17dbe5b83984e19665cddf07e.setIcon(icon_591907dd3ac3219b9c16bd8764afeb73);
+            
+    
+            var marker_2945afe4fd53bdd89b3be5a55d44c92e = L.marker(
+                [-8.0346737, -34.8680024],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_e30d20a8b6b2cd269f292b9285b69882 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b2eec39a7a18feb3e6bcc2f6a230dda3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bfdd02c04bd6f58af3d6c705ea013f26 = $(`<div id="html_bfdd02c04bd6f58af3d6c705ea013f26" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica de Massangana</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Prazeres<br>             <b>🏙️ Zona:</b> Jaboatão<br>             <b>⏱️ Duração:</b> 6.0 horas         </div>         </div>`)[0];
+                popup_b2eec39a7a18feb3e6bcc2f6a230dda3.setContent(html_bfdd02c04bd6f58af3d6c705ea013f26);
+            
+        
+
+        marker_2945afe4fd53bdd89b3be5a55d44c92e.bindPopup(popup_b2eec39a7a18feb3e6bcc2f6a230dda3)
+        ;
+
+        
+    
+    
+            marker_2945afe4fd53bdd89b3be5a55d44c92e.bindTooltip(
+                `<div>
+                     Feira Orgânica de Massangana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2945afe4fd53bdd89b3be5a55d44c92e.setIcon(icon_e30d20a8b6b2cd269f292b9285b69882);
+            
+    
+            var marker_1c3a605965cc7b9f0b317314b14f3939 = L.marker(
+                [-8.0100315, -34.8781677],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_7af84f534f3d385083fe295bacbcd268 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_84929abf206e927abfb33a0f404847b8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2690b2168b12e671e3b70b9c25fb95f7 = $(`<div id="html_2690b2168b12e671e3b70b9c25fb95f7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Produtos Orgânicos SESC Piedade</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Piedade<br>             <b>🏙️ Zona:</b> Jaboatão<br>             <b>⏱️ Duração:</b> 4.0 horas         </div>         </div>`)[0];
+                popup_84929abf206e927abfb33a0f404847b8.setContent(html_2690b2168b12e671e3b70b9c25fb95f7);
+            
+        
+
+        marker_1c3a605965cc7b9f0b317314b14f3939.bindPopup(popup_84929abf206e927abfb33a0f404847b8)
+        ;
+
+        
+    
+    
+            marker_1c3a605965cc7b9f0b317314b14f3939.bindTooltip(
+                `<div>
+                     Feira de Produtos Orgânicos SESC Piedade
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1c3a605965cc7b9f0b317314b14f3939.setIcon(icon_7af84f534f3d385083fe295bacbcd268);
+            
+    
+            var marker_a241d6f260ae18c87e0d3051a4c5a247 = L.marker(
+                [-8.1643893, -34.9223743],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_deb0340196de2ba1b280708a13cdcca6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1cf893bf37a920a18fecb2ebeedf5135 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2af0970d70e5830813401104ffa86f28 = $(`<div id="html_2af0970d70e5830813401104ffa86f28" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica da Prefeitura de JG</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Prazeres<br>             <b>🏙️ Zona:</b> Jaboatão<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_1cf893bf37a920a18fecb2ebeedf5135.setContent(html_2af0970d70e5830813401104ffa86f28);
+            
+        
+
+        marker_a241d6f260ae18c87e0d3051a4c5a247.bindPopup(popup_1cf893bf37a920a18fecb2ebeedf5135)
+        ;
+
+        
+    
+    
+            marker_a241d6f260ae18c87e0d3051a4c5a247.bindTooltip(
+                `<div>
+                     Feira Orgânica da Prefeitura de JG
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a241d6f260ae18c87e0d3051a4c5a247.setIcon(icon_deb0340196de2ba1b280708a13cdcca6);
+            
+    
+            var marker_6acc4a2e9a11fc20b49504ff31178774 = L.marker(
+                [-8.0953285, -34.950077],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_1f3ca8cb7cc84052831716e4447a1b60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86d3d0174b2ac51701db1ca6b685b0a0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6033732d462be84a289e64b597db530d = $(`<div id="html_6033732d462be84a289e64b597db530d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Produtos Orgânicos do Bairro do Barro</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Barro<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 4.5 horas         </div>         </div>`)[0];
+                popup_86d3d0174b2ac51701db1ca6b685b0a0.setContent(html_6033732d462be84a289e64b597db530d);
+            
+        
+
+        marker_6acc4a2e9a11fc20b49504ff31178774.bindPopup(popup_86d3d0174b2ac51701db1ca6b685b0a0)
+        ;
+
+        
+    
+    
+            marker_6acc4a2e9a11fc20b49504ff31178774.bindTooltip(
+                `<div>
+                     Feira de Produtos Orgânicos do Bairro do Barro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6acc4a2e9a11fc20b49504ff31178774.setIcon(icon_1f3ca8cb7cc84052831716e4447a1b60);
+            
+    
+            var marker_722a144481bf234880c13d618690e9c3 = L.marker(
+                [-8.0752233, -34.9793157],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_b14a22c6122c1fe06e67b20823ff2cca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32e35a3c769bafe2b2e4145c659318a9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_730e119c83d9d1c88d515a03479d844b = $(`<div id="html_730e119c83d9d1c88d515a03479d844b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Agroecológica na Associação dos Servidores do IFPE</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Curado<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 3.5 horas         </div>         </div>`)[0];
+                popup_32e35a3c769bafe2b2e4145c659318a9.setContent(html_730e119c83d9d1c88d515a03479d844b);
+            
+        
+
+        marker_722a144481bf234880c13d618690e9c3.bindPopup(popup_32e35a3c769bafe2b2e4145c659318a9)
+        ;
+
+        
+    
+    
+            marker_722a144481bf234880c13d618690e9c3.bindTooltip(
+                `<div>
+                     Feira Agroecológica na Associação dos Servidores do IFPE
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_722a144481bf234880c13d618690e9c3.setIcon(icon_b14a22c6122c1fe06e67b20823ff2cca);
+            
+    
+            var marker_26199519414d9b960f5b7f0edfb0093e = L.marker(
+                [-8.0524236, -34.9510615],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_614f33e3713c8a9dab16286839867997 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa44f8cb6feb55251125f8a9ef44718c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_284c725dfc4c3f0ec0e5c40eaceab292 = $(`<div id="html_284c725dfc4c3f0ec0e5c40eaceab292" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira de Alimentos Orgânicos do Hospital das Clínicas</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Cidade Universitária<br>             <b>🏙️ Zona:</b> Zona Oeste<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_fa44f8cb6feb55251125f8a9ef44718c.setContent(html_284c725dfc4c3f0ec0e5c40eaceab292);
+            
+        
+
+        marker_26199519414d9b960f5b7f0edfb0093e.bindPopup(popup_fa44f8cb6feb55251125f8a9ef44718c)
+        ;
+
+        
+    
+    
+            marker_26199519414d9b960f5b7f0edfb0093e.bindTooltip(
+                `<div>
+                     Feira de Alimentos Orgânicos do Hospital das Clínicas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26199519414d9b960f5b7f0edfb0093e.setIcon(icon_614f33e3713c8a9dab16286839867997);
+            
+    
+            var marker_5dbd76827bd845dcc7ecefe8493f4174 = L.marker(
+                [-8.0350981, -34.8972061],
+                {
+}
+            ).addTo(marker_cluster_58767a770dfc7a1666cda0a491d80c46);
+        
+    
+            var icon_7cf32b544779d70fbb8080527c867036 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "shopping-basket",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63e51ad68025d9e0f2fe396a9f42052f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7af78b002498c3522c9b791e94ad316 = $(`<div id="html_a7af78b002498c3522c9b791e94ad316" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 13px; width: 220px; line-height: 1.4;">             <b style="color: #00796b; font-size: 14px;">Feira Orgânica de Rosarinho</b><hr style="margin: 5px 0; border:0; border-top:1px solid #ccc;">             <b>📍 Bairro:</b> Aflitos<br>             <b>🏙️ Zona:</b> Zona Norte<br>             <b>⏱️ Duração:</b> 5.0 horas         </div>         </div>`)[0];
+                popup_63e51ad68025d9e0f2fe396a9f42052f.setContent(html_a7af78b002498c3522c9b791e94ad316);
+            
+        
+
+        marker_5dbd76827bd845dcc7ecefe8493f4174.bindPopup(popup_63e51ad68025d9e0f2fe396a9f42052f)
+        ;
+
+        
+    
+    
+            marker_5dbd76827bd845dcc7ecefe8493f4174.bindTooltip(
+                `<div>
+                     Feira Orgânica de Rosarinho
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5dbd76827bd845dcc7ecefe8493f4174.setIcon(icon_7cf32b544779d70fbb8080527c867036);
+            
+    
+            marker_cluster_58767a770dfc7a1666cda0a491d80c46.addTo(map_41df36cabfba81355ab781f5f17f27b0);
+        
+    
+            var layer_control_f9c1b5b618d6d8965c80ea8b6035ba58_layers = {
+                base_layers : {
+                    "https://server.arcgisonline.com/arcgis/rest/services/world_street_map/mapserver/tile/{z}/{y}/{x}" : tile_layer_b8b1bc032eeb06635b47b85125f7577d,
+                },
+                overlays :  {
+                    "Regi\u00e3o Metropolitana do Recife" : geo_json_f5f59ade6e92513f390427e2395b626a,
+                    "Feiras (Agrupadas)" : marker_cluster_58767a770dfc7a1666cda0a491d80c46,
+                },
+            };
+            let layer_control_f9c1b5b618d6d8965c80ea8b6035ba58 = L.control.layers(
+                layer_control_f9c1b5b618d6d8965c80ea8b6035ba58_layers.base_layers,
+                layer_control_f9c1b5b618d6d8965c80ea8b6035ba58_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_41df36cabfba81355ab781f5f17f27b0);
+
+        
+</script>
+</html>
