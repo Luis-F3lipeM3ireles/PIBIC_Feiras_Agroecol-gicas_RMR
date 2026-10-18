@@ -1,3 +1,4 @@
+HEAD
 # Projeto Feiras Agroecológicas
 
 Análise das feiras agroecológicas da região de Recife/PE: distribuição por
@@ -62,3 +63,7 @@ _(preencher com 2 ou 3 achados principais e as imagens geradas)_
 - Alguns bairros podem não ter correspondência com a base do IBGE.
 - Feiras que acontecem em mais de um dia são contadas pelo primeiro dia na
   análise por dia da semana (heatmap).
+
+# PIBIC_Feiras_Agroecol-gicas_RMR
+Repositório dedicado ao armazenamento, tratamento, análise e visualização interativa de dados sobre a organização das cadeias de distribuição dos sistemas alimentares de base agroecológica que abastecem a Região Metropolitana do Recife (RMR).
+ 76d184d8a24062d24d2081b3bd67a56f2ad0efbc
